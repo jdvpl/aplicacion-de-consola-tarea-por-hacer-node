@@ -1,0 +1,23 @@
+{
+  "name": "aplicacion-de-consola",
+  "version": "1.0.0",
+  "description": "se crea una app de consola por comando simulando una base de datos en este caso es un json https://www.udemy.com/course/node-de-cero-a-experto/learn/lecture/24666744#questions/4461376",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdvpl/aplicacion-de-consola-tarea-por-hacer-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdvpl/aplicacion-de-consola-tarea-por-hacer-node/issues"
+  },
+  "homepage": "https://github.com/jdvpl/aplicacion-de-consola-tarea-por-hacer-node#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
