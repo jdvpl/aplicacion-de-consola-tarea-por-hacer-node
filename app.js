@@ -1,19 +1,27 @@
 require('colors');
-const {inquirerMenu,pausa}= require('./helpers/inquirer')
+const {inquirerMenu,pausa,leetInput}= require('./helpers/inquirer')
 const Tarea = require('./models/tarea');
 const Tareas = require('./models/tareas');
+
 const main =async()=>{
-  console.clear();
-
   let opt='';
-
+  const tareas=new Tareas();
   do {
-    const tarea=new Tarea("Kisama")
-    const tareas= new Tareas();
-    tareas._listado[tarea.id] = tarea;
-    console.log(tareas)
 
     opt=await inquirerMenu();
+
+    switch (opt) {
+      case '1':
+        // crear opcion
+        const des=await leetInput('Decription:');
+        tareas.crearTarea(des);
+      break;
+      case '2':
+        console.log(tareas._listado)
+      break;
+    
+
+    }
     await pausa();
   } while (opt !=='0');
 }

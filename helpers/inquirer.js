@@ -40,8 +40,9 @@ const preguntas=[
     ],
   }
 ]
+// /opciones
 const inquirerMenu=async()=>{
-  // console.clear();
+  console.clear();
 
   console.log("===============".green)
     console.log("selecciona".green)
@@ -51,6 +52,7 @@ const inquirerMenu=async()=>{
   return opcion
 }
 
+// para pausar cuando se digie una opcion
 const pausa =async()=>{
   const question=[
     {
@@ -63,8 +65,28 @@ const pausa =async()=>{
   await inquirer.prompt(question);
 
 }
+// para leer lo que escribe
+const leetInput=async(message)=>{
+  const question=[
+    {
+      type: 'input',
+      name: 'desc',
+      message,
+      validate (value) {
+        if(value.length===0) {
+          return 'Por favor ingrese un valor';
+        }
+        return true;
+      }
+    }
+  ];
+
+  const {desc}=await inquirer.prompt(question);
+  return desc;
+}
 
 module.exports ={
   inquirerMenu,
   pausa,
+  leetInput
 };
