@@ -6,3 +6,6 @@ https://www.udemy.com/course/node-de-cero-a-experto/learn/lecture/24666744#quest
 ### inquirier
 ` paquete para aplicaciones de consola`
 ` npm i inquirer `
+
+### paquee para id unicos
+` npm i uuid`
