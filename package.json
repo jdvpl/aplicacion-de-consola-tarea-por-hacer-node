@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/jdvpl/aplicacion-de-consola-tarea-por-hacer-node#readme",
   "dependencies": {
-    "colors": "^1.4.0"
+    "colors": "^1.4.0",
+    "inquirer": "^8.2.0"
   }
 }
