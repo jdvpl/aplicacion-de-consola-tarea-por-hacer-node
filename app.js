@@ -11,10 +11,9 @@ const main =async()=>{
   const tareasDb=leetData();
 
   if(tareasDb){
-
+    tareas.cargarTareasFromArray(tareasDb);
   }
 
-  await pausa();
   do {
 
     opt=await inquirerMenu();
@@ -30,7 +29,7 @@ const main =async()=>{
       break;
     
     }
-    // guardarData(tareas.listadoArray);
+    guardarData(tareas.listadoArray);
     await pausa();
   } while (opt !=='0');
 }
