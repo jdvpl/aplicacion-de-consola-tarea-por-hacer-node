@@ -1,5 +1,5 @@
 require('colors');
-const { guardarData } = require('./helpers/guardarArchivo');
+const { guardarData,leetData } = require('./helpers/guardarArchivo');
 const {inquirerMenu,pausa,leetInput}= require('./helpers/inquirer')
 const Tarea = require('./models/tarea');
 const Tareas = require('./models/tareas');
@@ -7,6 +7,14 @@ const Tareas = require('./models/tareas');
 const main =async()=>{
   let opt='';
   const tareas=new Tareas();
+
+  const tareasDb=leetData();
+
+  if(tareasDb){
+
+  }
+
+  await pausa();
   do {
 
     opt=await inquirerMenu();
