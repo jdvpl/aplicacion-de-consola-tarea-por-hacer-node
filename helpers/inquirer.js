@@ -85,8 +85,35 @@ const leetInput=async(message)=>{
   return desc;
 }
 
+
+const listadoTareasBorrar=async(tareas=[])=>{
+  // {
+  //   value: '2',
+  //   name:`${'2'.green}. Listar tareas`
+  // },
+  const choices=tareas.map( (tarea, i) =>{
+    const idx=`${i+1}.`.green
+    return{
+      value:tarea.id,
+      name:` ${idx} ${tarea.desc}`,
+    }
+  })
+  const preguntass=[
+    {
+      type:'list',
+      name:'id',
+      message:'Borrar',
+      choices
+    }
+  ]
+  const {id}=await inquirer.prompt(preguntass);
+  // TODO: confirmacion de borrar
+  return id
+}
+
 module.exports ={
   inquirerMenu,
   pausa,
-  leetInput
+  leetInput,
+  listadoTareasBorrar
 };
