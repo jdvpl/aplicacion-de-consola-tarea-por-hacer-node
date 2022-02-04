@@ -98,6 +98,10 @@ const listadoTareasBorrar=async(tareas=[])=>{
       name:` ${idx} ${tarea.desc}`,
     }
   })
+  choices.unshift({
+    value: '0',
+    name:'0.'.green+ ' Cancelar'
+  });
   const preguntass=[
     {
       type:'list',
@@ -107,13 +111,27 @@ const listadoTareasBorrar=async(tareas=[])=>{
     }
   ]
   const {id}=await inquirer.prompt(preguntass);
-  // TODO: confirmacion de borrar
+  
   return id
+}
+
+const confirmar=async(message)=>{
+  const quiestion=[
+    {
+      type:'confirm',
+      name:'ok',
+      message
+    }
+  ];
+  const {ok}=await inquirer.prompt(quiestion);
+  return ok
+
 }
 
 module.exports ={
   inquirerMenu,
   pausa,
   leetInput,
-  listadoTareasBorrar
+  listadoTareasBorrar,
+  confirmar
 };
