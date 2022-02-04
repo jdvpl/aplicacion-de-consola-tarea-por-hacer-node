@@ -27,6 +27,12 @@ const main =async()=>{
       case '2':
         tareas.listadoCompleto()
       break;
+      case '3':
+        tareas.listarTareasCompletadas(true);
+      break;
+      case '4':
+        tareas.listarTareasCompletadas(false);
+      break;
     
     }
     guardarData(tareas.listadoArray);
