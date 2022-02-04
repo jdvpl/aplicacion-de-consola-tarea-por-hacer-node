@@ -1,6 +1,6 @@
 require('colors');
 const { guardarData,leetData } = require('./helpers/guardarArchivo');
-const {inquirerMenu,pausa,leetInput, listadoTareasBorrar, confirmar}= require('./helpers/inquirer')
+const {inquirerMenu,pausa,leetInput, listadoTareasBorrar, confirmar, mostrarListadoCheckList}= require('./helpers/inquirer')
 const Tarea = require('./models/tarea');
 const Tareas = require('./models/tareas');
 
@@ -33,6 +33,10 @@ const main =async()=>{
       case '4':
         tareas.listarTareasCompletadas(false);
       break;
+      case '5':
+        const ids=await mostrarListadoCheckList(tareas.listadoArray);
+        console.log(ids)
+      break;
 
       case '6': //borrar
         const id=await listadoTareasBorrar(tareas.listadoArray);
@@ -44,7 +48,7 @@ const main =async()=>{
             console.log("Tarea borrada!")
           }
         }else{
-          
+
         }
         
         

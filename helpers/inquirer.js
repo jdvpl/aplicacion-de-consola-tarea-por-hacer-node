@@ -115,6 +115,33 @@ const listadoTareasBorrar=async(tareas=[])=>{
   return id
 }
 
+const mostrarListadoCheckList=async(tareas=[])=>{
+  // {
+  //   value: '2',
+  //   name:`${'2'.green}. Listar tareas`
+  // },
+  const choices=tareas.map( (tarea, i) =>{
+    const idx=`${i+1}.`.green
+    return{
+      value:tarea.id,
+      name:` ${idx} ${tarea.desc}`,
+      checked:(tarea.completadoEn)?true:false
+    }
+  })
+
+  const pregunta=[
+    {
+      type:'checkbox',
+      name:'ids',
+      message:'Selecciona',
+      choices
+    }
+  ]
+  const {ids}=await inquirer.prompt(pregunta);
+  
+  return ids
+}
+
 const confirmar=async(message)=>{
   const quiestion=[
     {
@@ -133,5 +160,6 @@ module.exports ={
   pausa,
   leetInput,
   listadoTareasBorrar,
-  confirmar
+  confirmar,
+  mostrarListadoCheckList
 };
