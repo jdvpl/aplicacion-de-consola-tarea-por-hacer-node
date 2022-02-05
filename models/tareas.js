@@ -40,7 +40,7 @@ class Tareas{
     })
   }
   listarTareasCompletadas(completada=true){
-    console.log()
+    console.log();
     let contador=0;
     this.listadoArray.forEach( (tarea)=>{
       const {desc,completadoEn}=tarea;
